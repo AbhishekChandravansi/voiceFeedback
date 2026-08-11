@@ -9,7 +9,7 @@ app = FastAPI(title="Voice Feedback Portal")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://voicefeedback-frontend.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
