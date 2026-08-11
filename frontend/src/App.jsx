@@ -3,25 +3,37 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Login from "./Login";
 import Recorder from "./Recorder";
 import Admin from "./Admin";
+import Navbar from "./Navbar";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function App(){
 
-return(
+    const token = localStorage.getItem("token");
 
-<BrowserRouter>
+    return(
 
-<Routes>
+        <BrowserRouter>
+            {token && <Navbar />}
 
-<Route path="/" element={<Login/>}/>
+            <Routes>
 
-<Route path="/record" element={<Recorder/>}/>
+                <Route path="/" element={<Login/>}/>
 
-<Route path="/admin" element={<Admin/>}/>
+                <Route path="/record" element={<Recorder/>}/>
 
-</Routes>
+                <Route path="/admin" element={
+                    <ProtectedRoute>
+                        <Admin />
+                    </ProtectedRoute>
+                }
+                />
 
-</BrowserRouter>
+                <Route path="*" element={<Login />}/>
 
-)
+            </Routes>
+
+        </BrowserRouter>
+
+    )
 
 }

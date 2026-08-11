@@ -66,7 +66,8 @@ def login(user: Login):
         return {
             "access_token": token,
             "token_type": "bearer",
-            "role": existing_user.role
+            "role": existing_user.role,
+            "username": existing_user.username
         }
 
     finally:
