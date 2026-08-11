@@ -16,6 +16,7 @@ export default function Recorder() {
         audio: true,
       });
 
+      chunks.current = [];
       recorder.current = new MediaRecorder(stream);
 
       recorder.current.ondataavailable = (event) => {
@@ -28,6 +29,7 @@ export default function Recorder() {
         const blob = new Blob(chunks.current, {
           type: "audio/webm",
         });
+        //chunks.current = [];
 
         const form = new FormData();
 

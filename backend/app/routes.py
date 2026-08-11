@@ -1,5 +1,5 @@
 import os
-
+import uuid
 from fastapi import (APIRouter,UploadFile,File,HTTPException,Depends)
 from app.database import SessionLocal
 from app.models import User, Feedback
@@ -90,7 +90,7 @@ async def upload_audio_feedback(audio: UploadFile = File(...),current_user=Depen
 
         # Upload audio to GCP
         cloud_path = (
-            f"users/{current_user['user_id']}/{filename}"
+            f"users/{current_user['user_id']}/{uuid.uuid4()}"
         )
 
         cloudinary_url = upload_audio(
