@@ -6,10 +6,10 @@
     align-items: center;
     justify-content: space-between;
 
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: #000000;
+    border-bottom: 1px solid #222222;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
     position: sticky;
     top: 0;
@@ -20,7 +20,7 @@
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
-    color: #1f2937;
+    color: #ffffff;
 }
 
 .navbar-right {
@@ -31,7 +31,7 @@
 
 .username {
     font-weight: 500;
-    color: #374151;
+    color: #ffffff;
 }
 
 .admin-btn,
